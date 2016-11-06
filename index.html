@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>MapZii - Você de olho no foco!</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous" />
+    <link rel="stylesheet" href="app.css" />
+</head>
+
+<body>
+    <div class="col-md-4 menu">
+        <div class="title">
+            <b>Map</b><b class="b-red">Zii</b>
+            <div class="divider"></div>
+            <div class="subtitle">Você de olho no foco!</div>
+        </div> 
+        <div class="row">
+            <h4>Selecione os bairros que deseja comparar:</h4>
+            <div class="form-group col-md-6">
+                <label>Bairro 1</label>
+                <select class="form-control selectBairros" id="selectBairros1">
+                    <option value="">Selecione...</option>
+                </select>
+            </div>
+            <div class="form-group col-md-6">
+                <label>Bairro 2</label>
+                <select class="form-control selectBairros" id="selectBairros2">
+                    <option value="">Selecione...</option>
+                </select>
+            </div>
+            <div class="col-md-12">
+                <div class="pull-right">
+                    <button onclick="clearSelects()" type="button" class="btn btn-primary btn-xs">Limpar</button>
+                </div>
+            </div>
+        </div>
+        <div class="row" id="table-reference">
+            <div class="col-md-12">
+            <p>Tabela de referências</p>
+                <table class="table table-striped table-bordered table-ocorrencias">
+                    <tr id="infos1tr">
+                        <td><div class="infos" id="infos1Name"></td>
+                        <td><div class="infos" id="infos1"></div></td>
+                    </tr>
+                    <tr id="infos2tr">
+                        <td><div class="infos" id="infos2Name"></td>
+                        <td><div class="infos" id="infos2"></div></td>
+                    </tr>
+                    <tr>
+                        <td>Ocorrências totais:</td>
+                        <td><div class="infos" id="infostotal"></div></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <hr>
+        <div class="form-group">
+            <h4>Ranking de bairros</h4>
+            <div id="top10"></div>
+        </div>
+    </div>
+    <div id="map"></div>    
+    <script
+        src="https://code.jquery.com/jquery-3.1.1.min.js"
+        integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+        crossorigin="anonymous">
+    </script>
+    <script 
+        src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" 
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" 
+        crossorigin="anonymous">    
+    </script>
+    <script src="app.js"></script>
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBKX6aJncPUImvj4wLQTpn79sE1nfVw5Ms&&libraries=visualization&callback=initMap">
+    </script>
+</body>
+</html>
+
